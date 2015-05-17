@@ -11,8 +11,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 
@@ -111,13 +115,77 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">Filter</h3>
                     </div>
-                    
-                    <div class="panel-body">
-                        Panel content
+
+                    <div class="panel-body filter">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-default active">Today</button>
+                                <button type="button" class="btn btn-default">Yesterday</button>
+                                <button type="button" class="btn btn-default">This month</button>
+                                <button type="button" class="btn btn-default">Last month</button>
+                                <button type="button" class="btn btn-default">This year</button>
+                                <button type="button" class="btn btn-default">All time</button>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                From
+                                <div class='input-group date' id='datetimepicker6'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                To
+                                <div class='input-group date' id='datetimepicker7'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- <div class="col">
+                    Aliases
+                    <br>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            All
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="active"><a href="#">All</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker6').datetimepicker();
+                        $('#datetimepicker7').datetimepicker();
+                        $("#datetimepicker6").on("dp.change", function (e) {
+                            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+                        });
+                        $("#datetimepicker7").on("dp.change", function (e) {
+                            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+                        });
+                    });
+                </script>
 
                 <div class="table-responsive">
                     <div class="panel panel-primary">
