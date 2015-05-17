@@ -1,0 +1,42 @@
+.color-red {
+  color: #d02133 !important;
+}
+.color-red:hover {
+  color: #e43547 !important;
+}
+.navbar-nav .info-item {
+  line-height: 50px;
+  margin: 0 15px 0 18px;
+  color: #ddd;
+}
+.navbar-nav .info-item span {
+  color: #777;
+}
+.nav-sidebar .title {
+  color: #999;
+  padding: 10px 20px;
+}
+.paginator .btn-group {
+  float: left;
+  margin: 0;
+  margin-right: 10px;
+}
+.paginator .pagination {
+  float: left;
+  margin: 0;
+  margin-right: 25px;
+}
+.paginator .prelabel {
+  float: left;
+  line-height: 34px;
+  margin-right: 10px;
+}
+.panel {
+  border-color: #DDDDDD;
+}
+.table-responsive {
+  border: none;
+}
+.table-responsive th {
+  background: #F5F5F5;
+}
